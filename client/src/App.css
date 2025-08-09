@@ -1,0 +1,180 @@
+/* ToxiRover React App Styles */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes danger-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+  }
+}
+
+@keyframes safe-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+  }
+}
+
+/* Custom classes */
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.danger-glow {
+  animation: danger-glow 1s infinite;
+}
+
+.safe-glow {
+  animation: safe-glow 2s infinite;
+}
+
+/* Button hover effects */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all duration-200;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-all duration-200;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-all duration-200;
+}
+
+/* Card styles */
+.card {
+  @apply bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700;
+}
+
+.card-header {
+  @apply text-xl font-bold text-white mb-4;
+}
+
+/* Sensor display styles */
+.sensor-value {
+  @apply text-3xl font-bold;
+}
+
+.sensor-label {
+  @apply text-sm text-gray-400 uppercase tracking-wide;
+}
+
+/* Control button styles */
+.control-btn {
+  @apply w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-200;
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Status indicators */
+.status-online {
+  @apply text-green-400;
+}
+
+.status-offline {
+  @apply text-red-400;
+}
+
+.status-warning {
+  @apply text-yellow-400;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .control-btn {
+    @apply w-12 h-12 text-sm;
+  }
+  
+  .sensor-value {
+    @apply text-2xl;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500;
+}
+
+/* Alert styles */
+.alert {
+  @apply p-4 rounded-lg mb-4;
+}
+
+.alert-danger {
+  @apply bg-red-900 border border-red-700 text-red-100;
+}
+
+.alert-warning {
+  @apply bg-yellow-900 border border-yellow-700 text-yellow-100;
+}
+
+.alert-success {
+  @apply bg-green-900 border border-green-700 text-green-100;
+}
+
+/* Chart container */
+.chart-container {
+  @apply bg-gray-800 rounded-lg p-4 border border-gray-700;
+}
+
+/* Gas level indicator */
+.gas-level-indicator {
+  @apply relative w-full h-4 bg-gray-700 rounded-full overflow-hidden;
+}
+
+.gas-level-fill {
+  @apply h-full transition-all duration-500 ease-out;
+}
+
+.gas-level-safe {
+  @apply bg-green-500;
+}
+
+.gas-level-warning {
+  @apply bg-yellow-500;
+}
+
+.gas-level-danger {
+  @apply bg-red-500;
+}
+
+/* Distance indicator */
+.distance-indicator {
+  @apply relative w-32 h-32 rounded-full border-4 border-gray-700 flex items-center justify-center;
+}
+
+.distance-value {
+  @apply text-2xl font-bold text-white;
+}
+
+/* Servo control */
+.servo-slider {
+  @apply w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer;
+}
+
+.servo-slider::-webkit-slider-thumb {
+  @apply appearance-none w-6 h-6 bg-blue-500 rounded-full cursor-pointer;
+}
+
+.servo-slider::-moz-range-thumb {
+  @apply w-6 h-6 bg-blue-500 rounded-full cursor-pointer border-none;
+}
